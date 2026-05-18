@@ -1,5 +1,6 @@
 {
   "version": 2,
+
   "builds": [
     {
       "src": "Backend/server.js",
@@ -9,18 +10,23 @@
       "src": "Frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "dist"
       }
     }
   ],
+
   "routes": [
     {
       "src": "/api/(.*)",
       "dest": "Backend/server.js"
     },
     {
+      "src": "/(.*\\.[^/]+)$",
+      "dest": "Frontend/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/Frontend/$1"
+      "dest": "Frontend/index.html"
     }
   ]
 }
