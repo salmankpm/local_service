@@ -18,15 +18,15 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "Backend/server.js"
+      "dest": "/Backend/server.js"
     },
     {
       "src": "/(.*\\.[^/]+)$",
-      "dest": "Frontend/$1"
+      "dest": "/Frontend/$1"
     },
     {
       "src": "/(.*)",
-      "dest": "Frontend/index.html"
+      "dest": "/Frontend/index.html"
     }
   ]
 }
